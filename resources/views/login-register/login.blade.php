@@ -7,7 +7,7 @@
   
   
   
-      <link rel="stylesheet" href="{{asset('login-register/css/style.css')}}">
+      <link rel="stylesheet" href="css/style.css">
 
   
 </head>
@@ -16,12 +16,11 @@
 
   <div class="login-page">
   <div class="form">
-    <form class="register-form">
-      <input type="text" placeholder="name"/>
+    <form class="login-form">
+      <input type="text" placeholder="username"/>
       <input type="password" placeholder="password"/>
-      <input type="text" placeholder="email address"/>
-      <button>create</button>
-      <p class="message">Already registered? <a href="#">Sign In</a></p>
+      <button>login</button>
+      <p class="message">Not registered? <a href="#">Create an account</a></p>
     </form>
   </div>
 </div>

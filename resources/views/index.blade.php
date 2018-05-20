@@ -37,9 +37,9 @@
 
         <form class="login-form" method="POST" action="{{ route('login') }}">
             @csrf
-            <input type="text" id="nim" type="text" class="form-control{{ $errors->has('nim') ? ' is-invalid' : '' }}" name="nim" value="{{ old('nim') }}" placeholder="NIM" required autofocus/>
+            <input type="text" id="nim" type="text" class="form-control{{ $errors->has('nim') ? ' is-invalid' : '' }}" name="nim" value="{{ old('nim') }}" placeholder="NIM" required autofocus>
 
-            <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="password" required/>
+            <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="password" required>
 
 
             <button type="submit">login</button>

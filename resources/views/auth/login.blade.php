@@ -1,69 +1,86 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en" >
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+<head>
+  <meta charset="UTF-8">
+  <title>Login PKN UMM</title>
+  
+  
+  
+      <link rel="stylesheet" href="{{asset('login-register/css/style.css')}}">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+  <style>
+  .form select{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+</style>
+</head>
 
-                        <div class="form-group row">
-                            <label for="nim" class="col-sm-4 col-form-label text-md-right">{{ __('NIM') }}</label>
+<body>
 
-                            <div class="col-md-6">
-                                <input id="nim" type="text" class="form-control{{ $errors->has('nim') ? ' is-invalid' : '' }}" name="nim" value="{{ old('nim') }}" required autofocus>
+    <div class="login-page">
+    <div class="form">
+    
+        <form class="register-form" method="POST" action="{{ route('register') }}">
+            @csrf
+            
+                    <input id="nim" type="text" class="form-control{{ $errors->has('nim') ? ' is-invalid' : '' }}" name="nim" value="{{ old('nim') }}" placeholder="NIM / NIK" required autofocus>
 
-                                @if ($errors->has('nim'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('nim') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                    <input type="text" id="nama" class="form-control{{ $errors->has('nama') ? ' is-invalid' : '' }}" name="nama" value="{{ old('nama') }}" placeholder="Nama" required autofocus/>                      
+              
+                    <input id="email" type="text" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Email" required>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                    <select id="level" class="form-control{{ $errors->has('level') ? ' is-invalid' : '' }}" name="level">
+                      <option>-- Pilih Level Anda --</option>
+                      <option value="Dosen">DOSEN</option>
+                      <option value="Mahasiswa">MAHASISWA</option>
+                    </select>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                    <select id="jk" class="form-control{{ $errors->has('jk') ? ' is-invalid' : '' }}" name="jk">
+                      <option>-- Pilih Jenis Kelamin --</option>
+                      <option value="Laki-Laki">LAKI-LAKI</option>
+                      <option value="Perempuan">PEREMPUAN</option>
+                    </select>
+                       
+                    <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Password" required>
+                       
+                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password" required>
 
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+            <button type="submit">create</button>
 
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+            <p class="message">Already registered? <a href="#">Sign In</a></p>
+        </form>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
+        <form class="login-form" method="POST" action="{{ route('login') }}">
+            @csrf
+            <input type="text" id="nim" type="text" class="form-control{{ $errors->has('nim') ? ' is-invalid' : '' }}" name="nim" value="{{ old('nim') }}" placeholder="NIM" required autofocus>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+            <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="password" required>
+
+
+            <button type="submit">login</button>
+          <p class="message">Not registered? <a href="#">Create an account</a></p>
+        </form>
+  </div>
 </div>
-@endsection
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  
+
+    <script  src="{{asset('login-register/js/index.js')}}">
+    </script>
+
+
+
+
+</body>
+
+</html>

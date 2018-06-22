@@ -7,7 +7,7 @@
     <meta name="author" content="Isna Nur Azis">
     <meta name="keyword" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PKN UMM</title>
+    <title>PKN UMM mahasiswa</title>
  
     <!-- start: Css -->
     <link rel="stylesheet" type="text/css" href="asset/css/bootstrap.min.css">
@@ -67,11 +67,7 @@
                       <ul>
                         <li><a href=""><span class="fa fa-cogs"></span></a></li>
                         <li><a href=""><span class="fa fa-lock"></span></a></li>
-                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        <span class="fa fa-power-off "> <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form></span></a></li>
+                        <li><a href=""><span class="fa fa-power-off "></span></a></li>
                       </ul>
                     </li>
                   </ul>

@@ -12,11 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('user-login');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('group', 'groupControll');
+Route::prefix('admin')->group(function(){
+	Route::get('/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');
+	Route::post('/login','Auth\AdminLoginController@login')->name('admin.login.submit');
+	Route::get('/', 'AdminController@index')->name('admin');
+});
+Route::get('/dosen','Auth\AdminLoginController@showLoginForm')->name('dosen');

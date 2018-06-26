@@ -91,12 +91,12 @@
                       <p class="animated fadeInRight">Sat,October 1st 2029</p>
                     </li>
                     <li class="active ripple">
-                      <a class="tree-toggle nav-header"><span class="fa-home fa"></span> Dashboard 
+                      <a class="tree-toggle nav-header"><span class="fa-home fa"></span> My Profile 
                         <span class="fa-angle-right fa right-arrow text-right"></span>
                       </a>
                       <ul class="nav nav-list tree">
-                          <li><a href="login">LOGIN</a></li>
-                          <li><a href="register">REGISTER</a></li>
+                          <li><a href="#">#</a></li>
+                          <li><a href="#">#</a></li>
                       </ul>
                     </li>
                     <li class="ripple">

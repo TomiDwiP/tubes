@@ -24,6 +24,10 @@
 				<th>NIM Anggota 2</th>
 				<th>Tanggal pelaksaan</th>
 				<th>tanggal Selesai</th>
+				<th>Nama Instansi</th>
+				<th>Alamat</th>
+				<th>NO Telp</th>
+				<th>Email</th>
 				<th colspan="2">Action</th>
 			</tr>
 		</thead>
@@ -38,7 +42,7 @@
 				<td>{{$group['nimAnggota2']}}</td>
 				<td>{{$group['waktu_pelaksaan']}}</td>
 				<td>{{$group['waktu_selesai']}}</td>
-				
+				<td>{{$group['namainstansi']}}</td>
 				<td><a href="{{action('groupControll@edit', $group['id'])}}"
 			class="btn btn-warning">Ubah</a></td>
 </tr>

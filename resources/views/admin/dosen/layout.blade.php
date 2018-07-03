@@ -10,17 +10,17 @@
     <title>Admin Area!!</title>
  
     <!-- start: Css -->
-    <link rel="stylesheet" type="text/css" href="asset/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('asset/css/bootstrap.min.css')}}">
 
       <!-- plugins -->
-      <link rel="stylesheet" type="text/css" href="asset/css/plugins/font-awesome.min.css"/>
-      <link rel="stylesheet" type="text/css" href="asset/css/plugins/simple-line-icons.css"/>
-      <link rel="stylesheet" type="text/css" href="asset/css/plugins/animate.min.css"/>
-      <link rel="stylesheet" type="text/css" href="asset/css/plugins/fullcalendar.min.css"/>
-    <link href="asset/css/style.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="{{asset('asset/css/plugins/font-awesome.min.css')}}"/>
+      <link rel="stylesheet" type="text/css" href="{{asset('asset/css/plugins/simple-line-icons.css')}}"/>
+      <link rel="stylesheet" type="text/css" href="{{asset('asset/css/plugins/animate.min.css')}}"/>
+      <link rel="stylesheet" type="text/css" href="{{asset('asset/css/plugins/fullcalendar.min.css')}}"/>
+    <link href="{{asset('asset/css/style.css" rel="stylesheet')}}">
     <!-- end: Css -->
 
-    <link rel="shortcut icon" href="asset/img/logomi.png">
+    <link rel="shortcut icon" href="{{asset('asset/img/logomi.png')}}">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -56,7 +56,7 @@
               </ul>
 
               <ul class="nav navbar-nav navbar-right user-nav" style="margin-right: 15px;">
-                
+               
                   <li class="dropdown avatar-dropdown">
                    <img src="asset/img/avatar.jpg" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
                    <ul class="dropdown-menu user-dropdown">
@@ -162,64 +162,8 @@
                   </div>                    
                 </div>
                 <main>
-                  
-        <section>
-         <div class="container">
-            <br />
-            @if (\Session::has('success'))
-                <div class="alert alert-success">
-                    <p>{{ \Session::get('success') }}</p>
-                </div><br />
-            @endif
-        <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>ID</th>
-                <th>NID</th>
-                <th>nama</th>
-                <th>email</th>
-                <th>password</th>
-                <th colspan="2">Action</th>
-            </tr>
-        </thead>
-        
-        @php
-            $i=1;
-        @endphp
-
-        <tbody>
-            @foreach($dosens as $dosen)
-            <tr>
-                <td>{{$i++}}</td>
-                <td>{{$dosen['id']}}</td>
-                <td>{{$dosen['nid']}}</td>
-                <td>{{$dosen['nama']}}</td>
-                <td>{{$dosen['email']}}</td>
-                <td>{{$dosen['password']}}</td>
-                
-                
-            <td>
-                <a href="{{action('dosencontroll@edit', $dosen['id'])}}" class="btn btn-warning">Ubah</a>
-            </td>
-
-            <td>
-                <a href="{{action('dosencontroll@create', $dosen['id'])}}" class="btn btn-warning">tambah</a>
-            </td>
-            
-            <td>
-                <form action="{{action('dosencontroll@destroy', $dosen['id'])}}" method="post" > {{csrf_field()}}
-                    <input name="_method" type="hidden" value="DELETE"><button class="btn btn-danger" type="submit" onclick="return confirm('Yakin mau di hapus?');">Hapus</button>
-                </form>
-             </td>
-            
-            </tr>
-            @endforeach
-        
-        </tbody>
-        </table>
-        </div>
-        </section>
+                 
+                 @yield('content')
 
                 </main>
           <!-- end: content -->
@@ -273,23 +217,23 @@
        <!-- end: Mobile -->
 
     <!-- start: Javascript -->
-    <script src="asset/js/jquery.min.js"></script>
-    <script src="asset/js/jquery.ui.min.js"></script>
-    <script src="asset/js/bootstrap.min.js"></script>
+    <script src="{{asset('asset/js/jquery.min.js')}}"></script>
+    <script src="{{asset('asset/js/jquery.ui.min.js')}}"></script>
+    <script src="{{asset('asset/js/bootstrap.min.js')}}"></script>
    
     
     <!-- plugins -->
-    <script src="asset/js/plugins/moment.min.js"></script>
-    <script src="asset/js/plugins/fullcalendar.min.js"></script>
-    <script src="asset/js/plugins/jquery.nicescroll.js"></script>
-    <script src="asset/js/plugins/jquery.vmap.min.js"></script>
-    <script src="asset/js/plugins/maps/jquery.vmap.world.js"></script>
-    <script src="asset/js/plugins/jquery.vmap.sampledata.js"></script>
-    <script src="asset/js/plugins/chart.min.js"></script>
+    <script src="{{asset('asset/js/plugins/moment.min.js')}}"></script>
+    <script src="{{asset('asset/js/plugins/fullcalendar.min.js')}}"></script>
+    <script src="{{asset('asset/js/plugins/jquery.nicescroll.js')}}"></script>
+    <script src="{{asset('asset/js/plugins/jquery.vmap.min.js')}}"></script>
+    <script src="{{asset('asset/js/plugins/maps/jquery.vmap.world.js')}}"></script>
+    <script src="{{asset('asset/js/plugins/jquery.vmap.sampledata.js')}}"></script>
+    <script src="{{asset('asset/js/plugins/chart.min.js')}}"></script>
 
 
     <!-- custom -->
-     <script src="asset/js/main.js"></script>
+     <script src="{{asset('asset/js/main.js')}}"></script>
      <script type="text/javascript">
       (function(jQuery){
 

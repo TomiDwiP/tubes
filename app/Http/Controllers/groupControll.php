@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\group;
+use App\instansi;
 
 use Illuminate\Http\Request;
 
@@ -41,11 +42,22 @@ class groupControll extends Controller
         'nimKetua' => 'required | numeric',
         'nimAnggota1' => '',
         'nimAnggota2' => '',
+        'namainstansi' => 'required',
         'waktu_pelaksaan' => 'required',
         'waktu_selesai' => 'required'
+
         ]);
 
         group::create($group);
+
+        $instansi = $this->validate(request(),[
+        'namainstansi' => 'required',
+        'alamat' => 'required',
+        'telp' => 'required | numeric',
+        'email' => 'required|email'
+        ]);
+
+        instansi::create($instansi);
 
         return back()-> with('succes','data berhasil ditambahkan');;
 
@@ -72,6 +84,9 @@ class groupControll extends Controller
     {
         $group = group::find($id);
         return view('group.edit',compact('group','id'));
+
+        $instansi = instansi::find($id);
+        return view('group.edit',compact('group','id'));
     }
 
     /**
@@ -88,6 +103,7 @@ class groupControll extends Controller
   		'nimKetua' => 'required | numeric',
         'nimAnggota1' => '',
         'nimAnggota2' => '',
+        'namainstansi' => '',
         'waktu_pelaksaan' => 'required',
         'waktu_selesai' => 'required'
         ]);
@@ -95,8 +111,22 @@ class groupControll extends Controller
         $mahasiswa->nimKetua= $request->get('nim-ketua');
         $group->nimAnggota1= $request->get('nim-anggota1');
         $group->nimAnggota2= $request->get('nim-anggota2');
+        $group->namainstansi= $request->get('namainstansi');
         $group->waktu_pelaksaan= $request->get('waktu-pelaksaan');
         $group->waktu_selesai= $request->get('waktu-selesai');
+
+        $instansi = instansi::find($id);
+        $this->validate(request(), [
+  		'namainstansi' => 'required',
+        'alamat' => 'required',
+        'telp' => 'required | numeric',
+        'email' => 'required|email'
+        ]);
+
+        $instansi->namainstansi= $request->get('namainstansi');
+        $instansi->alamat= $request->get('alamat');
+        $instansi->telp= $request->get('telp');
+        $instansi->email= $request->get('email');
     }
 
     /**

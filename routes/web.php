@@ -25,3 +25,11 @@ Route::prefix('admin')->group(function(){
 	Route::get('/', 'AdminController@index')->name('admin');
 });
 Route::get('/dosen','Auth\AdminLoginController@showLoginForm')->name('dosen');
+
+Route::resource('group', 'groupControll');
+
+Route::resource('admin/dosen', 'dosencontroll');
+
+Route::resource('admin/crudadmin', 'adminControll');
+
+Route::resource('mahasiswa/instansi', 'instansiController');

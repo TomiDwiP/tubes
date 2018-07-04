@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+@extends('mahasiswa.home')
+
+@section('content')
+<!-- <!DOCTYPE html>
 	<html>
 		<head>
 			<meta charset="utf-8">
@@ -6,7 +9,10 @@
 			<link rel="stylesheet" href="{{asset('css/app.css')}}">
 		</head>
 		
-		<body>
+		<body> -->
+	<div class="col-md-12" style="padding-left: :20px;padding-right: 20px;padding-bottom: 20px;">
+    <div class="col-md-12 padding-0">    
+        <div class="panel box-vv">
 			<div class="container">
 			<br />
 			@if (\Session::has('success'))
@@ -25,9 +31,6 @@
 				<th>Tanggal pelaksaan</th>
 				<th>tanggal Selesai</th>
 				<th>Nama Instansi</th>
-				<th>Alamat</th>
-				<th>NO Telp</th>
-				<th>Email</th>
 				<th colspan="2">Action</th>
 			</tr>
 		</thead>
@@ -50,5 +53,9 @@
 </tbody>
 </table>
 </div>
-</body>
-</html>
+</div>
+</div>
+</div>
+<!-- </body>
+</html> -->
+@endsection

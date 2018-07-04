@@ -1,5 +1,7 @@
+@extends('mahasiswa.home')
 
-<!DOCTYPE html>
+@section('content')
+<!-- <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -7,7 +9,7 @@
 		<link rel="stylesheet" href="{{asset('css/app.css')}}">
 	</head>
 
-	<body>
+	<body -->>
 		@if ($errors->any())
 		<div class="alert alert-danger">
 		<ul>
@@ -111,5 +113,6 @@
 
 			</form>
 		</div>
-	</body>
-</html>
+<!-- 	</body>
+</html> -->
+@endsection

@@ -1,4 +1,4 @@
-@extends('admin/dosen.layout')
+@extends('mahasiswa.home')
 
 @section('content') 
 
@@ -48,5 +48,8 @@
         </tbody>
         </table>
         </div>
+        </div>
+</div>
+</div>
 @endsection
 

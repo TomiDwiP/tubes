@@ -1,11 +1,7 @@
 
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>..::Tambah Admin::..</title>
-		<link rel="stylesheet" href="{{asset('css/app.css')}}">
-	</head>
+@extends('mahasiswa.home')
+
+@section('content') 
 
 	<body>
 		@if ($errors->any())
@@ -63,5 +59,7 @@
 
 			</form>
 		</div>
-	</body>
-</html>
+		</div>
+		</div>
+		</div>
+@endsection

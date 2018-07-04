@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>..::Tambah Dosen::..</title>
-		<link rel="stylesheet" href="{{asset('css/app.css')}}">
-	</head>
+@extends('mahasiswa.home')
+
+@section('content')   
 		@if ($errors->any())
 		<div class="alert alert-danger">
 		<ul>
@@ -68,5 +64,7 @@
 
 			</form>
 		</div>
-	</body>
-</html>
+	</div>
+	</div>
+	</div>
+@endsection

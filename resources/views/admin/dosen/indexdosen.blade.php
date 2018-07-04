@@ -1,6 +1,6 @@
-@extends('admin/dosen.layout')
+@extends('mahasiswa.home')
 
-@section('content')            
+@section('content')           
             <div class="container">
             <br />
             @if (\Session::has('success'))
@@ -50,4 +50,7 @@
         </tbody>
         </table>
         </div>
+        </div>
+</div>
+</div>
 @endsection

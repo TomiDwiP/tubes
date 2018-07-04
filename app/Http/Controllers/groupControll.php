@@ -16,6 +16,11 @@ class groupControll extends Controller
      */
     public function index()
     {
+
+        // $grup = \App\group::table('groups')
+        //             ->join('instansi', 'groups.namainstansi', '=', 'instansis.namainstansi')
+        //             ->get();
+        // $instansi = \App\instansi::table('instansis')->get();
         $groups = group::all()->toArray();
         return view('group.index', compact('groups'));
     }

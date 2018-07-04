@@ -43,6 +43,10 @@ class adminControll extends Controller
         'email' => 'required|email',
         'password' => 'required|min:6'
         ]);
+
+        admin::create($admin);
+
+        return redirect('admin')->with('success','Data has add');
     }
 
     /**

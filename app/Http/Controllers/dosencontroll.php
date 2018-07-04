@@ -40,7 +40,7 @@ class dosencontroll extends Controller
         'nid' => 'required | numeric',
         'nama' => 'required',
         'email' => 'required|email',
-        'password' => hash::make($data[])
+        'password' => 'required'
         
         ]);
 
@@ -86,7 +86,7 @@ class dosencontroll extends Controller
         'nid' => 'required | numeric',
         'nama' => 'required',
         'email' => 'required|email',
-        'password' => bcrypt($data['password'])
+        'password' => 'required'
         ]);
 
         $dosen->nid= $request->get('nid');

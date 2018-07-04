@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-	<html>
-		<head>
-			<meta charset="utf-8">
-			<title>..::Data Admin::..</title>
-			<link rel="stylesheet" href="{{asset('css/app.css')}}">
-		</head>
+@extends('admin/dosen.layout')
+
+@section('content') 
 
             <div class="container">
             <br />
@@ -39,14 +35,10 @@
             <td>
                 <a href="{{action('adminControll@edit', $admin['id'])}}" class="btn btn-warning">Ubah</a>
             </td>
-
-            <td>
-                <a href="{{action('adminControll@create', $admin['id'])}}" class="btn btn-warning">tambah</a>
-            </td>
             
             <td>
                 <form action="{{action('adminControll@destroy', $admin['id'])}}" method="post" > {{csrf_field()}}
-                    <input name="_method" type="hidden" value="DELETE"><button class="btn btn-danger" type="submit" onclick="return confirm('Yakin mau di hapus?');"">Hapus</button>
+                    <input name="_method" type="hidden" value="DELETE"><button class="btn btn-danger" type="submit" onclick="return confirm('Yakin mau di hapus?');">Hapus</button>
                 </form>
              </td>
             
@@ -56,6 +48,5 @@
         </tbody>
         </table>
         </div>
-        </body>
-</html>
+@endsection
 

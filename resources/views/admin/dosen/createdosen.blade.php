@@ -1,13 +1,6 @@
+@extends('admin/dosen.layout')
 
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>..::Data Dosen::..</title>
-		<link rel="stylesheet" href="{{asset('css/app.css')}}">
-	</head>
-
-	<body>
+@section('content') 
 		@if ($errors->any())
 		<div class="alert alert-danger">
 		<ul>
@@ -71,5 +64,4 @@
 
 			</form>
 		</div>
-	</body>
-</html>
+@endsection

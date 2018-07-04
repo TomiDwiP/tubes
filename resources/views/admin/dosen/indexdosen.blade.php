@@ -39,12 +39,6 @@
             <td>
                 <a href="{{action('dosencontroll@edit', $dosen['id'])}}" class="btn btn-warning">Ubah</a>
             </td>
-
-            <td>
-                <a href="{{action('dosencontroll@create', $dosen['id'])}}" class="btn btn-warning">tambah</a>
-            </td>
-            
-            <td>
                 <form action="{{action('dosencontroll@destroy', $dosen['id'])}}" method="post" > {{csrf_field()}}
                     <input name="_method" type="hidden" value="DELETE"><button class="btn btn-danger" type="submit" onclick="return confirm('Yakin mau di hapus?');">Hapus</button>
                 </form>

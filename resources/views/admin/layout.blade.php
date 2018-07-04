@@ -104,12 +104,15 @@
                     </li>
                     <li class="ripple"><a class="tree-toggle nav-header"><span class="fa fa-check-square-o"></span> Admins  <span class="fa-angle-right fa right-arrow text-right"></span> </a>
                       <ul class="nav nav-list tree">
-                        <li><a href="#">#</a></li>
+                        <li><a href="http://localhost:8000/admin/crudadmin/create">Tambah Admin</a></li>
+                      </ul>
+                      <ul class="nav nav-list tree">
+                        <li><a href="http://localhost:8000/admin/crudadmin">Daftar Admin</a></li>
                       </ul>
                     </li>
                     <li class="ripple"><a class="tree-toggle nav-header"><span class="fa fa-file-code-o"></span> Dosens  <span class="fa-angle-right fa right-arrow text-right"></span> </a>
                       <ul class="nav nav-list tree">
-                        <li><a href="http://localhost:8000/admin/dosen/create?2">tambah</a></li>
+                        <li><a href="http://localhost:8000/admin/dosen/create?2">Tambah Dosen</a></li>
                       </ul>
                       <ul class="nav nav-list tree">
                         <li><a href="http://localhost:8000/admin/dosen">Daftar Dosen</a></li>
